@@ -25,7 +25,8 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "preserveSymlinks": true
           },
           "configurations": {
             "production": {
@@ -123,6 +124,41 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "package-test-ng7": {
+      "root": "projects/package-test-ng7",
+      "sourceRoot": "projects/package-test-ng7/src",
+      "projectType": "library",
+      "prefix": "uig",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/package-test-ng7/tsconfig.lib.json",
+            "project": "projects/package-test-ng7/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/package-test-ng7/src/test.ts",
+            "tsConfig": "projects/package-test-ng7/tsconfig.spec.json",
+            "karmaConfig": "projects/package-test-ng7/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/package-test-ng7/tsconfig.lib.json",
+              "projects/package-test-ng7/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]

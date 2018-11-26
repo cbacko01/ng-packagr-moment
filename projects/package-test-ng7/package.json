@@ -1,0 +1,15 @@
+{
+  "$schema": "../../node_modules/ng-packagr/package.schema.json",
+  "name": "package-test-ng7",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.0.0",
+    "@angular/core": "^7.0.0"
+  },
+  "dependencies": {
+    "i": "^0.3.6",
+    "moment": "^2.22.2",
+    "moment-es6": "^1.0.0",
+    "npm": "^6.4.1"
+  }
+}

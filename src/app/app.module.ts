@@ -3,12 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { PackageTestNg7Module } from 'package-test-ng7';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    PackageTestNg7Module,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -16,6 +16,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "package-test-ng7": [
+        "dist/package-test-ng7"
+      ],
+      "package-test-ng7/*": [
+        "dist/package-test-ng7/*"
+      ]
+    }
   }
 }

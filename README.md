@@ -1,27 +1,44 @@
 # PackageTestNg7App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6 following [this guide: Creating a Library with Angular CLI](https://blog.angularindepth.com/creating-a-library-in-angular-6-87799552e7e5).
 
-## Development server
+This project contains:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. A **package** located in `/projects/package-test-ng7/`.
+2. A **project** located in `src/`, which is used to test the package.
 
-## Code scaffolding
+## Working with the Package
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+See `package.json` for a list of common commands. 
 
-## Build
+There are 2 ways to work with packages, which we'll call "dev mode" and "package mode." 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+In each case, you'll need to install dependencies for both the package and project:
 
-## Running unit tests
+```
+npm i
+(cd projects/package-test-ng7/ && npm i)
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+After following the steps below, you can test your changes using the developer server: `ng serve`.
 
-## Running end-to-end tests
+### Dev Mode
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Dev mode facilitates quick testing.
 
-## Further help
+You can run the package script `build_lib` or `build_lib_watch`, the latter of which will trigger a build on changes to the package source code.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Your package will not need to be listed as a project dependency. 
+
+In this mode, your project will need to have all of the _package's_ dependencies installed.
+
+### Package Mode
+
+Package mode does a full package build. 
+
+Running a full build is a manual process. Use the package script `package`. 
+
+Your compiled package's `.tgz` file will need to be listed as a dependency in your project's `package.json`. 
+
+In this mode, your project will need to have all of the _package's_ dependencies installed.
+

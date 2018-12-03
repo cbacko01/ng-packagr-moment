@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import * as momentNs from 'moment';
-const moment = momentNs;
+import * as _moment from "moment"; const moment = _moment;
 
 
 @Component({
